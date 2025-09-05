@@ -1,0 +1,40 @@
+modules = ["ruby-3.2", "swift-5.8"]
+[agent]
+expertMode = true
+
+[nix]
+channel = "stable-25_05"
+packages = ["flutter", "chromium"]
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Flutter Web App"
+
+[[workflows.workflow]]
+name = "Flutter Web App"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "CHROME_EXECUTABLE=chromium flutter run -d web-server --web-port 5000 --web-hostname 0.0.0.0"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[deployment]
+deploymentTarget = "autoscale"
+run = ["bash", "-c", "cd build/web && python3 -m http.server 5000 --bind 0.0.0.0"]
+build = ["flutter", "build", "web", "--release"]

@@ -108,7 +108,7 @@ class AppTheme {
     ),
 
     // Card theme for message bubbles and modal surfaces
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       color: surfaceLight,
       elevation: 2,
       shadowColor: shadowLight,
@@ -285,7 +285,7 @@ class AppTheme {
     ),
 
     // Tab bar for conversation states
-    tabBarTheme: TabBarTheme(
+    tabBarTheme: TabBarThemeData(
       labelColor: primaryLight,
       unselectedLabelColor: textSecondaryLight,
       indicatorColor: primaryLight,
@@ -388,7 +388,7 @@ class AppTheme {
       iconTheme: IconThemeData(color: textPrimaryDark),
       actionsIconTheme: IconThemeData(color: textPrimaryDark),
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       color: surfaceDark,
       elevation: 2,
       shadowColor: shadowDark,
@@ -545,7 +545,7 @@ class AppTheme {
       overlayColor: primaryDark.withAlpha(51),
       inactiveTrackColor: borderDark.withAlpha(77),
     ),
-    tabBarTheme: TabBarTheme(
+    tabBarTheme: TabBarThemeData(
       labelColor: primaryDark,
       unselectedLabelColor: textSecondaryDark,
       indicatorColor: primaryDark,
