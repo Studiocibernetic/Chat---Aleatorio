@@ -1,4 +1,4 @@
-modules = ["ruby-3.2", "swift-5.8"]
+modules = ["python-3.11", "ruby-3.2", "swift-5.8"]
 [agent]
 expertMode = true
 
